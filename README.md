@@ -1,0 +1,4 @@
+# TIY-6-1-Angular Shop
+
+
+The Iron Yard week 6, day 1 and week 6, day 2 assignment.  For this assignment I built a basic shop app using [Angular] (https://angularjs.org/ "Angular") to learn more about Angular [controllers] (https://docs.angularjs.org/api/ngMock/service/$controller) and [modules] (https://docs.angularjs.org/api/ng/function/angular.module).  I used a sample data set and displayed the data in a table using Angular's [ng-repeat] (https://docs.angularjs.org/api/ng/directive/ngRepeat "ng-repeat").  This assignment was updated for week 6, day 2 with a form to allow a user to add new products to the page with a form.  The form has validation that responds to the form being filled out correctly snd will not let the form be submitted without it being filled out completely.  
