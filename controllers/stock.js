@@ -5,9 +5,9 @@
          let vm = this;
 
          let promise = users.getUsers();
-         promise.then(res => {
-            console.log(res.data);
-            vm.users = res.data;
+         promise.then(response => {
+            console.log(response.data);
+            vm.users = response.data;
          })
 
          vm.submit = function(user) {
@@ -17,15 +17,23 @@
                likejs: user.likejs,
                id: Date.now()
             };
-            vm.user = users.addUser(newUser);
+
+            let promise = users.addUser(newUser);
+            promise.then(response => {
+               console.log(response.data);
+               vm.users = response.data;
+            })
             vm.form = {};
 
          }
 
          vm.onClickDelete = function(id) {
-            vm.delete = users.deleteUser(id);
-
+            let promise = users.deleteUser(id);
+            promise.then(response => {
+               console.log(response.data);
+               vm.users = response.data;
+               vm.delete = users.deleteUser(id);
+            })
          }
-
       })
 })();

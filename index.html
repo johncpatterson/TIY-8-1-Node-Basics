@@ -24,17 +24,17 @@
                <th>Likes Javascript:</th>
                <th>Delete User:</th>
             </tr>
-            <tr ng-cloak ng-repeat="data in controller.users track by $index">
-               <td>{{data.name}}</td>
-               <td>{{data.age}}</td>
-               <td>{{data.likesJS}}</td>
+            <tr ng-cloak ng-repeat="user in controller.users track by $index">
+               <td>{{user.name}}</td>
+               <td>{{user.age}}</td>
+               <td>{{user.likejs}}</td>
                <td><i class="fa fa-trash" aria-hidden="true" ng-click="controller.onClickDelete(id)"></i></td>
             </tr>
          </table>
       </div>
    </div>
    <div class="form-container container">
-      <form name="newUserForm" ng-submit="users.submit(users.form)">
+      <form name="newUserForm" ng-submit="controller.submit(controller.form)">
          <label for="item-name">User Name:</label>
          <br>
          <input type="text" name="username" ng-model="controller.form.username" class="form-control" required>
@@ -45,7 +45,7 @@
          <br>
          <label for="item-discount">Likes Javascript (yes or no):</label>
          <br>
-         <input type="text" name="likesjs" ng-model="controller.form.likesjs" class="form-control" required>
+         <input type="text" name="likejs" ng-model="controller.form.likejs" class="form-control" required>
          <br>
          <button class="btn btn-success btn-block" type="submit" id="submit" value="add new user">Add new user</button>
       </form>

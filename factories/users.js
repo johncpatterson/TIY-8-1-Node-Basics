@@ -4,7 +4,7 @@
       .factory('users', function($http) {
 
          const getUsers = function() {
-            var call = $http({
+            let call = $http({
                method: 'GET',
                url: 'http://localhost:3000/users'
             });
@@ -12,7 +12,7 @@
          }
 
          const addUser = function(newUser) {
-            var call = $http({
+            let call = $http({
                method: 'POST',
                data: {newUser:newUser},
                url: 'http://localhost:3000/users'
@@ -21,9 +21,9 @@
          }
 
          const deleteUser = function(id) {
-            var call = $http({
+            let call = $http({
                method: 'POST',
-               data: id,
+               data: newUser.id,
                url: 'http://localhost:3000/users'
             });
             return call;
