@@ -18,7 +18,6 @@ app.get('/users', function(req, res) {
 
 app.post('/users', function(req, res) {
    var newUser = req.body.newUser;
-   newUser = JSON.parse(newUser);
    users.push(newUser);
    console.log(newUser);
    res.json(users);

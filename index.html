@@ -16,24 +16,25 @@
 <body ng-controller='UserController as controller'>
    <div class="container-fluid">
       <div class="table-container">
-         <h1 class="table-header"><img src="https://angular.io/resources/images/logos/angular2/angular.svg" alt="angular logo">Angular Shop:</h1>
+         <h1 class="table-header"><img src="https://angular.io/resources/images/logos/angular2/angular.svg" alt="angular logo">Node Shop:</h1>
          <table id="myTable" class="table-hover">
             <tr>
                <th>User Name:</th>
                <th>User Age:</th>
                <th>Likes Javascript:</th>
+               <th>Delete User:</th>
             </tr>
-            <tr ng-cloak ng-repeat="data in users.users track by $index">
-               <td>{{user.username}}</td>
-               <td>{{user.userage}}</td>
-               <td>{{user.likesjs}}</td>
+            <tr ng-cloak ng-repeat="data in controller.users track by $index">
+               <td>{{data.name}}</td>
+               <td>{{data.age}}</td>
+               <td>{{data.likesJS}}</td>
                <td><i class="fa fa-trash" aria-hidden="true" ng-click="controller.onClickDelete(id)"></i></td>
             </tr>
          </table>
       </div>
    </div>
    <div class="form-container container">
-      <form name="newUserForm" ng-submit="stock.submit(stock.form)">
+      <form name="newUserForm" ng-submit="users.submit(users.form)">
          <label for="item-name">User Name:</label>
          <br>
          <input type="text" name="username" ng-model="controller.form.username" class="form-control" required>
@@ -49,7 +50,6 @@
          <button class="btn btn-success btn-block" type="submit" id="submit" value="add new user">Add new user</button>
       </form>
    </div>
-   
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.js"></script>

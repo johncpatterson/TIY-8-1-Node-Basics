@@ -14,7 +14,7 @@
          const addUser = function(newUser) {
             var call = $http({
                method: 'POST',
-               data: newUser,
+               data: {newUser:newUser},
                url: 'http://localhost:3000/users'
             });
             return call;
