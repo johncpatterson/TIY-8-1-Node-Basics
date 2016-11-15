@@ -24,15 +24,16 @@
                vm.users = response.data;
             })
             vm.form = {};
-
          }
 
          vm.onClickDelete = function(id) {
-            let promise = users.deleteUser(id);
+            let taco = {
+                id: id
+            };
+            let promise = users.deleteUser(taco);
             promise.then(response => {
                console.log(response.data);
                vm.users = response.data;
-               vm.delete = users.deleteUser(id);
             })
          }
       })

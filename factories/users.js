@@ -14,7 +14,7 @@
          const addUser = function(newUser) {
             let call = $http({
                method: 'POST',
-               data: {newUser:newUser},
+               data: { newUser: newUser },
                url: 'http://localhost:3000/users'
             });
             return call;
@@ -23,8 +23,8 @@
          const deleteUser = function(id) {
             let call = $http({
                method: 'POST',
-               data: newUser.id,
-               url: 'http://localhost:3000/users'
+               data: id,
+               url: 'http://localhost:3000/users/delete'
             });
             return call;
          }
@@ -37,4 +37,3 @@
 
       });
 })();
-

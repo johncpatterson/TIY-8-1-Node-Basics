@@ -46,5 +46,5 @@ gulp.task('browserSync', function() {
 //   .pipe(notify("Hello Gulp!"));
 
 gulp.task('watch', ['browserSync', 'sass'], function() {
-    gulp.watch(['./*.html', './js/*.js', './sass/*.scss'], ['sass']);
+    gulp.watch(['*.html', './js/*.js', './sass/*.scss'], ['sass']);
 });
