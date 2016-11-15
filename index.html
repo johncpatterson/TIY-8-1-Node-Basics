@@ -13,9 +13,8 @@
    <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
-   
-   <div class="container-fluid" ng-controller='UserController as controller'>
+<body ng-controller='UserController as controller'>
+   <div class="container-fluid">
       <div class="table-container">
          <h1 class="table-header"><img src="https://angular.io/resources/images/logos/angular2/angular.svg" alt="angular logo">Angular Shop:</h1>
          <table id="myTable" class="table-hover">
@@ -24,43 +23,33 @@
                <th>User Age:</th>
                <th>Likes Javascript:</th>
             </tr>
-            <tr ng-cloak ng-repeat="item in stock.items track by $index">
-               <td>{{item.name}}</td>
-               <td>{{item.figureSalesTax}}</td>
-               <td>{{item.discount}}</td>
+            <tr ng-cloak ng-repeat="data in users.users track by $index">
+               <td>{{user.username}}</td>
+               <td>{{user.userage}}</td>
+               <td>{{user.likesjs}}</td>
+               <td><i class="fa fa-trash" aria-hidden="true" ng-click="controller.onClickDelete(id)"></i></td>
             </tr>
          </table>
       </div>
    </div>
    <div class="form-container container">
-      <form name="newItemForm" novalidate ng-submit="stock.submit(stock.form)">
-         <label for="item-name">Item Name:</label>
+      <form name="newUserForm" ng-submit="stock.submit(stock.form)">
+         <label for="item-name">User Name:</label>
          <br>
-         <input type="text" name="name" ng-model="stock.form.name" class="form-control" required>
-         <div class="alert alert-info" ng-show="newItemForm.name.$error.required">Please enter the new item name</div>
+         <input type="text" name="username" ng-model="controller.form.username" class="form-control" required>
          <br>
-         <label for="item-price">Item Price:</label>
+         <label for="item-price">User Age:</label>
          <br>
-         <input type="number" name="price" ng-model="stock.form.price" class="form-control" required>
-         <div class="alert alert-info" ng-show="newItemForm.price.$error.required">Please enter the new item price</div>
+         <input type="number" name="userage" ng-model="controller.form.userage" class="form-control" required>
          <br>
-         <label for="item-discount">Item Discount:</label>
+         <label for="item-discount">Likes Javascript (yes or no):</label>
          <br>
-         <input type="number" name="discount" ng-model="stock.form.discount" class="form-control" required>
-         <div class="alert alert-info" ng-show="newItemForm.discount.$error.required">Please enter the new item discount</div>
+         <input type="text" name="likesjs" ng-model="controller.form.likesjs" class="form-control" required>
          <br>
-         <label for="item-quantity">Item Quantity:</label>
-         <br>
-         <input type="number" name="quantity" ng-model="stock.form.quantity" class="form-control" required>
-         <div class="alert alert-info" ng-show="newItemForm.quantity.$error.required">Please enter the new item quantity</div>
-         <br>
-         <label for="item-color">Item Color:</label>
-         <br>
-         <button class="btn btn-success btn-block" ng-disabled="newItemForm.$invalid" type="submit" id="submit" value="add items to inventory">Add item to Inventory</button>
+         <button class="btn btn-success btn-block" ng-disabled="newItemForm.$invalid" type="submit" id="submit" value="add new user">Add new user</button>
       </form>
    </div>
-   <div class="footer">
-   </div>
+   
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.js"></script>

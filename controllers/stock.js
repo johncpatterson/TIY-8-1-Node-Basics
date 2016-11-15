@@ -5,11 +5,20 @@
          let vm = this;
 
          vm.submit = function(user) {
-            vm.items = users.addUser(user);
+            let newUser = {
+               name: user.username,
+               age: user.userage,
+               likejs: user.likejs,
+               id: Date.now()
+            };
+            vm.user = user.addUser(newUser);
             vm.form = {};
          }
 
-         // let returnedStorage = storage.getUsers();
-         // vm.items = returnedStorage;
+         vm.onClickDelete = function(id) {            
+            vm.delete = users.deleteUser(id);
+            
+         }
+
       })
 })();
