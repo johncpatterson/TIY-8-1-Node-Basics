@@ -25,9 +25,7 @@ app.post('/users', function(req, res) {
 })
 
 app.delete('/users', function(req, res) {
-
    var index = null;
-
    users.forEach(function(newUser, idx) {
       if (newUser.id === id) {
          index = idx;

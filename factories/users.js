@@ -32,14 +32,9 @@
          return {
             getUsers,
             addUser,
-            deleteUser,
+            deleteUser
          }
 
       });
 })();
 
-
-// var userData = {
-//                    name: username,
-//                    time: Date.now()
-//                }
